@@ -10,9 +10,9 @@
 
 const exchangeRates = {
     USD: 1,
-    VND: 25400,
-    EUR: 0.92,
-    AUD: 1.51
+    VND: 26337.8,
+    EUR: 0.8535,
+    AUD: 1.3897
 };
 
 function convertCurrency(amount, from, to) {
@@ -25,4 +25,4 @@ function convertCurrency(amount, from, to) {
     return finalAmount;
 }
 
-console.log(convertCurrency(100, 'EUR', 'VND'));
+console.log(convertCurrency(100000, 'VND', 'USD').toFixed(2));
