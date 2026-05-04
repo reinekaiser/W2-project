@@ -5,25 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chuyển đổi tiền tệ</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-        <div>
+    <div class="container">       
+        <div class="card-primary">
             <div class="card-header">
                 <h1>Chuyển đổi tiền tệ</h1>
                 <p class="subtitle">USD &bull; EUR &bull; AUD &bull; VND</p>
             </div>
 
-            <div>
+            <div class="input-card">
                 <label for="amount">Số tiền</label>
                 <input type="number" id="amount" placeholder="Nhập số tiền..." value="1" min="0" step="any">
                 <span class="error-message" id="errorMsg"></span>
             </div>
 
-            <div>
-                <div>
+            <div class="currency-row">
+                <div class="currency-group">
                     <label for="fromCurrency">Từ</label>
                     <select id="fromCurrency">
                         <option value="USD">USD — Đô La Mỹ</option>
@@ -35,7 +35,7 @@
 
                 <button id="swapBtn" class="swap-btn" title="Hoán đổi">⇄</button>
 
-                <div>
+                <div class="currency-group">
                     <label for="toCurrency">Sang</label>
                     <select id="toCurrency">
                         <option value="EUR">EUR — Euro</option>
