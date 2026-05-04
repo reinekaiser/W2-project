@@ -10,9 +10,9 @@
 
 const exchangeRates = {
     USD: 1,
-    VND: 25400,
-    EUR: 0.92,
-    AUD: 1.51
+    VND: 26337.8,
+    EUR: 0.8535,
+    AUD: 1.3897
 };
 
 function convertCurrency(amount, from, to) {
@@ -25,4 +25,37 @@ function convertCurrency(amount, from, to) {
     return finalAmount;
 }
 
-console.log(convertCurrency(100, 'EUR', 'VND'));
+document.addEventListener('DOMContentLoaded', () => {
+    const amountInput = document.getElementById('amount');
+    const fromSelect = document.getElementById('fromCurrency');
+    const toSelect = document.getElementById('toCurrency');
+    const convertBtn = document.getElementById('convertBtn');
+    const resultText = document.querySelector('#resultBox span:first-child');
+    const resultCurrency = document.getElementById('resultCurrency');
+    const swapBtn = document.getElementById('swapBtn');
+
+    convertBtn.addEventListener('click', () => {
+        const amount = parseFloat(amountInput.value);
+        const from = fromSelect.value;
+        const to = toSelect.value;
+
+        if (isNaN(amount) || amount <= 0) {
+            alert("Vui lòng nhập số tiền hợp lệ");
+            return;
+        }
+
+        const result = convertCurrency(amount, from, to);
+
+        resultText.innerText = result.toLocaleString('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+        resultCurrency.innerText = to;
+    });
+
+    swapBtn.addEventListener('click', () => {
+        const temp = fromSelect.value;
+        fromSelect.value = toSelect.value;
+        toSelect.value = temp;
+    });
+});
