@@ -91,6 +91,13 @@ select {
     font-size: 1.25rem;
     font-weight: 700;
     color: #111;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+#resultBox p:nth-child(2) span:first-child {
+    word-break: break-all;
+    min-width: 0;
 }
 
 #resultCurrency {

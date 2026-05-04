@@ -46,10 +46,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const result = convertCurrency(amount, from, to);
 
-        resultText.innerText = result.toLocaleString('en-US', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
+        let formatted;
+        if (result >= 1e12) {
+            formatted = new Intl.NumberFormat('en-US', {
+                notation: 'compact',
+                maximumFractionDigits: 4
+            }).format(result);
+        } else {
+            formatted = result.toLocaleString('en-US', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+        }
+        resultText.innerText = formatted;
         resultCurrency.innerText = to;
     });
 
