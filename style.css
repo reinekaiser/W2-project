@@ -69,3 +69,69 @@ select {
 }
 .swap-btn:hover { background: #e8e8e8; transform: rotate(180deg); }
 
+#resultBox {
+    margin-bottom: 16px;
+    padding: 14px 12px;
+    background: #fff;
+    border: 1.5px solid #ccc;
+    border-radius: 7px;
+}
+
+#resultBox p:first-child {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+#resultBox p:nth-child(2) {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111;
+}
+
+#resultCurrency {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+}
+
+#exchangeRate {
+    margin-top: 6px;
+    font-size: 0.77rem;
+    color: #999;
+    min-height: 18px;
+}
+
+#convertBtn {
+    width: 100%;
+    padding: 11px 12px;
+    margin-bottom: 20px;
+    background: #111;
+    border: 1.5px solid #111;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+#convertBtn:hover {
+    background: #333;
+    transform: translateY(-1px);
+}
+
+h3 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+#ratesGrid {
+    display: grid;
+    gap: 8px;
+}
